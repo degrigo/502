@@ -21,7 +21,7 @@ class Estoque
 		if(isset($this->itens[$item])){
 			return $this->itens[$item];
 		}
-		throw new Exception("Error Processing Request", 1);
+		throw new InvalidArgumentException("Item não existe no estoque");
 						
 	}
 }
