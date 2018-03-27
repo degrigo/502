@@ -29,6 +29,12 @@ class EstoqueTest extends TestCase
 		$estoque->add($item, 5);
 		$estoque->add($item, 10);
 
+<<<<<<< HEAD
 		$this->assertSame(16, $estoquel->get($item));
 	}
+=======
+		$this->assertSame(16, $estoque->get($item));
+	}
+
+>>>>>>> aula01
 }
