@@ -40,8 +40,28 @@ class EstoqueTest extends TestCase
 	 */
 	public function testItemInvalido()
 	{
+		// Criando estoque
 		$estoque = new Estoque();
+		// Quando busco item que não existe no estoque
+		// esperamos um retorno da mensagem do anotation acima.
 		$estoque->get('blusa x');
+	}
+
+	// Teste que remove quantidade
+	public function testRemoveItem()
+	{
+		// Crio item
+		$item = 'blusa Y';
+		$estoque = new Estoque();
+		// Adiciono no estoque
+		$estoque->add($item, 10);
+		$estoque->add($item, 3);
+		$estoque->add($item, 8);
+		// Removo item do estoque
+		$estoque->remove($item, 15);
+
+		// Resultado esperado do teste
+		$this->assertSame(6, $estoque->get($item));
 	}
 
 }
