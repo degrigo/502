@@ -73,4 +73,13 @@ class TestesTest extends TestCase
 		$this->assertNull($nulo);
 	}
 
+	// testa se é igual mas não idêntico
+	public function testEquals()
+	{
+		$a = "1";
+		$b = 1;
+
+		$this->assertEquals($a, $b);
+	}
+
 }
