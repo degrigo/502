@@ -20,4 +20,16 @@ class EstoqueTest extends TestCase
 
 	}
 
+	public function testSomaQuantidades()
+	{
+		$item = 'blusa azul';
+
+		$estoque = new Estoque();
+		$estoque->add($item, 1);
+		$estoque->add($item, 5);
+		$estoque->add($item, 10);
+
+		$this->assertSame(16, $estoque->get($item));
+	}
+
 }
