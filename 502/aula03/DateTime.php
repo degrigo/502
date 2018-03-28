@@ -49,3 +49,48 @@ echo $data->format('d/m/Y H:i:s');
 echo "<br>";
 $data->setTimeZone($fuso);
 echo $data->format('d/m/Y H:i:s');
+
+echo "<hr>";
+
+$intervalo = new DateInterval('P10DT3H40M');
+echo $intervalo->format("%D dias e %H horas e %I minutos de intervalo");
+
+echo "<hr>";
+
+$dataAtual = new DateTime();
+$dataNasc = new DateTime('1984-05-05');
+$intervalo = $dataNasc->diff($dataAtual);
+
+echo $dataAtual->format('d/m/Y');
+echo "<br>";
+echo $dataNasc->format('d/m/Y');
+echo "<br>";
+echo $intervalo->format("%a dias de intervalo");
+
+echo "<hr>";
+
+$dataAtual = new DateTime();
+$dataNasc = new DateTime('1984-05-05');
+$intervalo = $dataAtual->diff($dataNasc);
+
+echo $dataAtual->format('d/m/Y');
+echo "<br>";
+echo $dataNasc->format('d/m/Y');
+echo "<br>";
+echo $intervalo->format("%r %a dias de intervalo");
+
+echo "<hr>";
+
+var_dump($dataNasc > $dataAtual);
+var_dump($dataNasc == $dataAtual);
+var_dump($dataNasc < $dataAtual);
+var_dump($dataNasc != $dataAtual);
+
+echo "<hr>";
+
+$data = new DateTime('2018-03-28');
+
+var_dump($data > $dataAtual);
+var_dump($data == $dataAtual);
+var_dump($data < $dataAtual);
+var_dump($data != $dataAtual);
