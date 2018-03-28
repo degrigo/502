@@ -33,3 +33,19 @@ $data->setTime(13, 10, 55);
 echo $data->format('d/m/Y H:i:s');
 
 echo "<hr>";
+
+$fuso = new DateTimeZone('America/New_York');
+$data = new DateTime();
+echo $data->format('d/m/Y H:i:s');
+echo "<br>";
+$data->setTimeZone($fuso);
+echo $data->format('d/m/Y H:i:s');
+
+echo "<hr>";
+
+$fuso = new DateTimeZone('Europe/Rome');
+$data = new DateTime();
+echo $data->format('d/m/Y H:i:s');
+echo "<br>";
+$data->setTimeZone($fuso);
+echo $data->format('d/m/Y H:i:s');
