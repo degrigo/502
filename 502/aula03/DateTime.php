@@ -94,3 +94,34 @@ var_dump($data > $dataAtual);
 var_dump($data == $dataAtual);
 var_dump($data < $dataAtual);
 var_dump($data != $dataAtual);
+
+echo "<hr>";
+
+print_r($data);
+$data->add(new DateInterval('P4D'));
+print_r($data);
+
+echo "<hr>";
+
+print_r($data);
+$data->sub(new DateInterval('P7D'));
+print_r($data);
+
+echo "<hr>";
+
+date_default_timezone_set('America/Sao_Paulo');
+$dataSP = new DateTime();
+echo $dataSP->format('d/m/Y H:i:s');
+
+echo "<br>";
+
+date_default_timezone_set('Asia/Tokyo');
+$dataSP = new DateTime();
+echo $dataSP->format('d/m/Y H:i:s');
+
+echo "<hr>";
+
+// mostrar data em outra língua
+
+setlocale(LC_ALL, 'pt_BR.utf8');
+echo strftime("%A, %e de %B de %Y");
