@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <apostilas>
 	<apostila versao="1.0">
-		<titulo>PHP</titulo>
+		<titulo>Dominando PHP</titulo>
 		<topicos>
 			<topico>Introdução</topico>
 			<topico>Intermediário</topico>
 			<topico>Avançado</topico>
 		</topicos>
 	</apostila>	
-	<apostila versao="1.0">		
+	<apostila versao="2.0">	
+		<titulo>Testando PHP</titulo>
+		<topicos>
+			<topico>Introdução</topico>
+			<topico>Intermediário</topico>
+			<topico>Avançado</topico>
+		</topicos>	
 	</apostila>	
-	<apostila versao="2.0">		
+	<apostila versao="3.0">
+		<titulo>Lendo PHP</titulo>
+		<topicos>
+			<topico>Mudando tópico 1</topico>
+			<topico>Intermediário</topico>
+			<topico>Avançado</topico>
+		</topicos>		
 	</apostila>
 </apostilas>
