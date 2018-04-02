@@ -22,7 +22,13 @@ XML;
 
 // Objeto SimpleXMLElement imprime o valor da string contendo XML.
 
-$apostilas = new SimpleXMLElement($xml);
+// $apostilas = new SimpleXMLElement($xml);
+
+// pegando o xml de arquivo externo
+// 1º String data
+// 2º passar como nulo
+// 3º carrega um arquivo caso a consulta externa for verdadeira
+$apostilas = new SimpleXMLElement('../apostilas.xml', null, true);
 
 echo "<pre>";
 print_r($apostilas);
