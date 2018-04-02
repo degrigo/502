@@ -28,7 +28,11 @@ XML;
 // 1º String data
 // 2º passar como nulo
 // 3º carrega um arquivo caso a consulta externa for verdadeira
-$apostilas = new SimpleXMLElement('../apostilas.xml', null, true);
+// $apostilas = new SimpleXMLElement('../apostilas.xml', null, true);
+
+// função nativa do php
+
+$apostilas = simplexml_load_file('../apostilas.xml');
 
 echo "<pre>";
 print_r($apostilas);
