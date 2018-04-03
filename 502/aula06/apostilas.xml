@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <apostilas>
 	<apostila versao="1.0">
-		<titulo>PHP Enterprise</titulo>
+		
 		<topicos>
 			<topico>Introdução</topico>
 			<topico>Intermediário</topico>
