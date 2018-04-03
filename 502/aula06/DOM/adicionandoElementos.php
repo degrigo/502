@@ -3,10 +3,10 @@
 $dom = new DOMDocument();
 $dom->load('../apostilas.xml');
 
+// Localizando o elemento apostila
 $apostilas = $dom->getElementsByTagName('apostila');
 
-// Localizando o elemento apostila
-
+// Novo Elemento
 $codigo = $dom->createElement('codigo', '500');
 
 // Adiciono novo elemento
