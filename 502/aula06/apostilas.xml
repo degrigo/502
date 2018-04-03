@@ -7,7 +7,7 @@
 			<topico>Intermediário</topico>
 			<topico>Avançado</topico>
 		</topicos>
-	<paginas>140</paginas><capitulos><capitulo>1 - Iniciando</capitulo><capitulo>2 - Aprendendo</capitulo><capitulo>3 - Terminando</capitulo></capitulos></apostila>	
+	<paginas>140</paginas><capitulos><capitulo>1 - Iniciando</capitulo><capitulo>2 - Aprendendo</capitulo><capitulo>3 - Terminando</capitulo></capitulos><codigo>500</codigo><codigo>500</codigo><codigo>500</codigo></apostila>	
 	<apostila versao="2.0">	
 		<titulo>Testando PHP</titulo>
 		<topicos>
