@@ -6,25 +6,23 @@
 
 <?php
 
-echo "<pre>";
-
 if($_POST)
 {
 	$cep = $_POST['cep'];
 
 	$url = "https://viacep.com.br/ws/{$cep}/json";
 
-	// file get contents lê conteúdo web
-	// só serve para pegar informações
-	$retorno = file_get_contents($url);
+	$curl = curl_init();
 
-	// retorna objeto stdClass
+	curl_setopt($curl, CURLOPT_URL, $url);
+
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+	$retorno = curl_exec($curl);
+
+	curl_close($curl);
+
 	$endereco = json_decode($retorno);
-
-	// retorna uma array
-	// $endereco = json_decode($retorno, true);
-
-	// print_r($endereco);
 
 	echo "<strong>Rua: </strong>" . $endereco->logradouro . "<br>";
 }
