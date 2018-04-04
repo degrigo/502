@@ -16,4 +16,13 @@ class Alunos
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function find($id)
+	{
+		$sql = "SELECT * FROM tb_alunos WHERE id = :id";
+		$stmt = $this->con->prepare($sql);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
 }
