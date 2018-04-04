@@ -34,7 +34,23 @@ switch ($method) {
 		}
 
 		break;
-	
+	case 'POST':
+		// file_get_contents lê os principais verbos HTTP (GET, POST, PUT, DELETE, etc) 
+		$dados = file_get_contents("php://input");
+		// transformando dados a serem inseridos em array POR CONTA DO TRUE. Se não, seria convertido em objeto
+		$dados = json_decode($dados, true);
+
+		$result = $alunos->insert($dados);
+
+		header('HTTP/1.1 201');
+		// Adicionando tipo de conteúdo, mostrando que é um JSON
+		header('Content-type:application/json; charset=UTF-8');
+		echo json_encode([
+				"status" 	=> "ok",
+				"data" 		=>	$result,
+				"message"	=>	""
+			]);	
+		break;
 	default:
 		# code...
 		break;
