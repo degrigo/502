@@ -7,7 +7,7 @@ $stmt->execute();
 $pessoas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $json = json_encode($pessoas);
-$json = json_decode($pessoas);
+// $json = json_decode($pessoas);
 
 file_put_contents('pessoas.json',$json );
 
