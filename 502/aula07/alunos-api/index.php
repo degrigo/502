@@ -51,7 +51,36 @@ switch ($method) {
 				"message"	=>	""
 			]);	
 		break;
+	// Put realiza atualização na API
+	case 'PUT':
+		$dados = file_get_contents("php://input");
+		$dados = json_decode($dados, true);
+
+		$result = $alunos->update($dados);
+
+		header('HTTP/1.1 201');
+		header('Content-type:application/json; charset=UTF-8');
+		echo json_encode([
+				"status" 	=> "ok",
+				"data" 		=>	$result,
+				"message"	=>	""
+			]);
+		break;
+	case 'DELETE':
+		$dados = file_get_contents("php://input");
+		$dados = json_decode($dados, true);
+
+		$result = $alunos->delete($dados);
+
+		header('HTTP/1.1 201');
+		header('Content-type:application/json; charset=UTF-8');
+		echo json_encode([
+				"status" 	=> "ok",
+				"data" 		=>	$result,
+				"message"	=>	""
+			]);
+		break;
 	default:
-		# code...
+		header('HTTP/1.1 404');
 		break;
 }

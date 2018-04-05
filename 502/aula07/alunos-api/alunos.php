@@ -1,5 +1,13 @@
 <?php
 
+// Formato JSON
+
+// {
+// "nome" : "Daniela Pini",
+// "email" : "danipini9@hotmail.com",
+// "id" :  "2"
+// }
+
 class Alunos
 {
 	private $con;
@@ -22,7 +30,7 @@ class Alunos
 		$stmt = $this->con->prepare($sql);
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
-		
+
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -32,6 +40,30 @@ class Alunos
 		$stmt = $this->con->prepare($sql);
 		$stmt->bindValue(":nome", $dados['nome']);
 		$stmt->bindValue(":email", $dados['email']);
+
+		return $stmt->execute();
+	}
+
+	public function update($dados)
+	{
+		$sql = "UPDATE tb_alunos SET nome=:nome,email=:email 
+		WHERE id=:id";
+		$stmt = $this->con->prepare($sql);
+		$stmt->bindValue(":nome", $dados['nome']);
+		$stmt->bindValue(":email", $dados['email']);
+		$stmt->bindValue(":id", $dados['id']);		
+
+		return $stmt->execute();
+	}
+
+	public function delete($dados)
+	{
+		// :id na query mostra que é um parametro
+		$sql = "DELETE FROM tb_alunos WHERE id=:id";
+		$stmt = $this->con->prepare($sql);
+		$stmt->bindValue(":nome", $dados['nome']);
+		$stmt->bindValue(":email", $dados['email']);
+		$stmt->bindValue(":id", $dados['id']);		
 
 		return $stmt->execute();
 	}
