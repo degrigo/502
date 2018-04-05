@@ -56,13 +56,11 @@ class Alunos
 		return $stmt->execute();
 	}
 
-	public function delete($dados)
+	public function delete(array $dados)
 	{
 		// :id na query mostra que é um parametro
 		$sql = "DELETE FROM tb_alunos WHERE id=:id";
 		$stmt = $this->con->prepare($sql);
-		$stmt->bindValue(":nome", $dados['nome']);
-		$stmt->bindValue(":email", $dados['email']);
 		$stmt->bindValue(":id", $dados['id']);		
 
 		return $stmt->execute();
