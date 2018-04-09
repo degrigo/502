@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/4linux', function () {
     return view('4linux');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
