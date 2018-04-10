@@ -19,6 +19,13 @@ Route::get('/4linux', function () {
     return view('4linux');
 });
 
+// Route::get('/users', 'UsersController@hello');
+Route::get('/users', 'UsersController@index');
+Route::post('/users', 'UsersController@create');
+Route::get('/users', 'UsersController@find');
+Route::put('/users', 'UsersController@update');
+Route::delete('/users', 'UsersController@delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
