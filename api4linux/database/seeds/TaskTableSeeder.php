@@ -8,7 +8,7 @@ class TaskTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $users = \App\User::all();
+        $users = \App\User\Model::all();
         foreach ($users as $user) {
         	for ($i = 0; $i < 5; $i++) { 
         	DB::table('tarefas')->insert([
