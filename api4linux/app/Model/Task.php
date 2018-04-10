@@ -12,4 +12,9 @@ class Task extends Model
     	'id', 'status', 'descricao', 'usuario_id'
     ];
 
+    public function user()
+    {
+    	return $this->belongsTo('App\Model\User');
+    }
+
 }
